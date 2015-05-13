@@ -8,7 +8,6 @@ if __name__ == '__main__':
     t = 12 * pi
     
     hlist = logspace(-1, -3, num=20)
-    print hlist
     errlist = []
     for h in hlist:
         tlist, xlist, vlist = explicit_euler(v, x, h, t)

@@ -25,7 +25,7 @@
 \item
 \begin{figure}[h]
 \centering
-\includegraphics[width=3in]{img/explicit.png}
+\includegraphics[width=3in]{img/explicit.pdf}
 \caption{Explicit Euler method}
 \end{figure}
 The above graph shows the explicit Euler approximation of 6 cycles of oscillations of a mass on a spring with $k/m = 1$. The position is shown in blue, and the velocity is shown in green. A timestep of 0.05 is used, along with $x_0 = 0$ and $v_0 = 1$. As we can see, as the oscillations progress they deviate from the ideal harmonic motion we would expect due to the accumulated errors in the approximation.
@@ -44,17 +44,18 @@ A &= v_0 / \cos \phi
 Plotting this analytic solution is then straightforward for any given $x_0$ and $v_0$.
 \begin{figure}[h]
 \centering
-\medgraph{img/diff.png}{Euler position (blue) vs. analytical position}
-\medgraph{img/error.png}{Error for position (blue) and velocity (green)}
+\medgraph{img/diff.pdf}{Euler position (blue) vs. analytical position}
+\medgraph{img/error.pdf}{Error for position (blue) and velocity (green)}
 \caption{Global error}
 \end{figure}
 
 \item
 \begin{figure}[H]
 \centering
-\includegraphics[width=3in]{img/truncation.png}
+\includegraphics[width=3in]{img/truncation.pdf}
 \caption{Timestep and truncation error}
 \end{figure}
+See above.
 
 \item
 Analytically, the energy of the system is simple. 
@@ -69,7 +70,7 @@ We can see that the energy of the system is constant, proportional to the amplit
 The evolution of the normalized total energy follows the same trend as the evolution of the global errors, increasing at an increased rate throughout the timespan of the simulation.
 \begin{figure}[H]
 \centering
-\includegraphics[width=3in]{img/energy.png}
+\includegraphics[width=3in]{img/energy.pdf}
 \caption{Normalized total energy}
 \end{figure}
 
@@ -83,7 +84,7 @@ v_{i+1} &= v_i - \frac{h \cdot x_i + h^2 \cdot v_i}{h^2 + 1}
 \end{align*}
 \begin{figure}[h]
 \centering
-\includegraphics[width=3in]{img/implicit.png}
+\includegraphics[width=3in]{img/implicit.pdf}
 \caption{Implicit Euler method}
 \end{figure}
 The implicit Euler method truly is the complement of the explicit method, because the errors do the opposite of what they did before. Now the global errors cause the energy of the oscillations to decrease over time, and the function decreases its amplitude because of this. 
