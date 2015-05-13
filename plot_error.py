@@ -17,4 +17,4 @@ if __name__ == '__main__':
     plt.plot(hlist, errlist)
     plt.xlabel('Timestep (h)')
     plt.ylabel('Maximum positional error')
-    plt.show()
+    plt.savefig('img/truncation.pdf', bbox_inches='tight')

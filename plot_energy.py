@@ -14,4 +14,4 @@ if __name__ == '__main__':
     plt.plot(tlist, elist)
     plt.xlabel('Time (t)')
     plt.ylabel('Energy')
-    plt.show()
+    plt.savefig('img/energy.pdf', bbox_inches='tight')
