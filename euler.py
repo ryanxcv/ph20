@@ -70,13 +70,32 @@ if __name__ == '__main__':
     h = 0.05
     t = 12 * pi
     
+    # Plot explicit euler.
+    plt.xlabel('Time (t)')
     tlist, xlist, vlist = explicit_euler(v, x, h, t)
+    plt.plot(tlist, xlist)
+    plt.plot(tlist, vlist)
+    plt.savefig('img/explicit.pdf', bbox_inches='tight')
     
-    plt.plot(tlist,  xlist)
-    plt.plot(tlist,  vlist)
-    #plt.plot(tlist, analytic(v, x, tlist))
-    #plt.plot(tlist, xlist - analytic(v, x, tlist)[0])
-    #plt.plot(tlist, vlist - analytic(v, x, tlist)[1])
+    # Plot explicit euler error.
+    plt.clf()
+    plt.xlabel('Time (t)')
+    plt.plot(tlist, xlist - analytic(v, x, tlist)[0])
+    plt.plot(tlist, vlist - analytic(v, x, tlist)[1])
+    plt.savefig('img/error.pdf', bbox_inches='tight')
+    
+    # Plot explicit euler positional difference.
+    plt.clf()
     plt.xlabel('Time (t)')
     plt.ylabel('Position (x)')
-    plt.show()
+    plt.plot(tlist, xlist)
+    plt.plot(tlist, analytic(v, x, tlist)[0])
+    plt.savefig('img/diff.pdf', bbox_inches='tight')
+    
+    # Plot impicit euler.
+    plt.clf()
+    plt.xlabel('Time (t)')
+    tlist, xlist, vlist = implicit_euler(v, x, h, t)
+    plt.plot(tlist, xlist)
+    plt.plot(tlist, vlist)
+    plt.savefig('img/implicit.pdf', bbox_inches='tight')
