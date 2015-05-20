@@ -8,7 +8,7 @@ clean :
 	rm assn3.log
 
 assn3.pdf : drawings
-	$(TEXC) assn3.tex
+	$(TEXC) assn3.tex > /dev/null
 
 drawings :
 	python euler.py

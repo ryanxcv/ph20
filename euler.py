@@ -1,6 +1,7 @@
 from math  import pi, tanh
 from numpy import cos, sin
 import matplotlib.pyplot as plt
+import os
 
 ''' Calculates the next velocity explicitly based on v, x, and h. '''
 def vnext(v, x, h):
@@ -69,6 +70,11 @@ if __name__ == '__main__':
     x = 0.
     h = 0.05
     t = 12 * pi
+    
+    # Check whether the /img directory exists.
+    if not os.path.isdir(os.getcwd() + "/img"):
+        # If it doesn't, create it.
+        os.makedirs(os.getcwd() + "/img")
     
     # Plot explicit euler.
     plt.xlabel('Time (t)')
